@@ -2,8 +2,8 @@
 title: Learn Git and GitHub
 email: aespaldi@gmail.com
 description:  A tutorial for beginners to understand version control using Git and code sharing with GitHub.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://github.com/aespaldi/learn-github" # the base hostname & protocol for your site
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "http:aespaldi.github.io/learn_github" # the base hostname & protocol for your site
 twitter_username: aespaldi
 github_username:  aespaldi
 
