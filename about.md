@@ -1,11 +1,8 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Git Basics
+permalink: /git_basics/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Git is version control
+<iframe src="https://player.vimeo.com/video/70206168" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/70206168">CSCI 106: Challenge 5</a> from <a href="https://vimeo.com/user9970137">Anne Spalding</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
