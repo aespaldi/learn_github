@@ -36,7 +36,7 @@ permalink: /github_basics/
 </ul>
 </div>
 Let's look at each of these commands in detail.</p>
-
+<ol>
 <li><strong>Creating a Repository: </strong>As a developer, you always want to have a backup of your code, as well as being able to access it from anywhere and easily share it with others. When you start a new coding project you should also create a GitHub repository for this backup. There are two main ways to do this:
 <ol>
 <li>If you're starting a new project, you can create the repository on GitHub and then clone it to your computer before you start.</li>
@@ -49,7 +49,7 @@ Let's look at each of these commands in detail.</p>
 <li>Navigate to the repository on the other account</li>
 <li>Choose the <strong>fork</strong> option</li>
 <li>Select which of your accounts you want to fork into (if you have more than one)</li>
-<li>View the forked repository on your own account (you should be redirected there automatically when GitHub finishes forking).</li>
+<li>View the forked repository on your own account (you should be redirected there automatically when GitHub finishes forking)</li>
 </ol></li>
 
 
@@ -59,9 +59,9 @@ Cloning is the process of copying a repository from GitHub to your personal comp
 <li>Navigate online to the GitHub repository you want to clone and copy its url. (If you are using SSH Keys, select SSH before copying - otherwise select HTTPS)</li>
 <li>On your local computer use the Command Line to navigate to the directory you wish to clone the GitHub repository into. Verify that this directory is <strong>NOT</strong> already a Git repository by typing <pre> ls -la</pre> and verifying there is no <span class='inline-code-tt'>.git</span> folder. You <strong>NEVER</strong> want to clone a repository into another local Git repository</li>
 
-<li>Clone the repository. <pre> git clone &lt;COPIED-URL&gt;</pre>
+<li>Clone the repository. <pre> git clone COPIED-URL</pre>
 If you are using HTTPS, you will be prompted to enter your GitHub username and password. (You won't be able to see what you type just press enter when you finish each)</li>
-<li>Cloning creates a new folder with the same name as the repository on GitHub. Navigate into this folder. <pre>
+<li>Cloning creates a new folder with the same name as the repository on GitHub. Navigate into this folder.<pre>
 ls
 cd FOLDER-NAME</pre></li>
 <li>The folder you have created is a Git repository and the cloning process has set up a <strong>remote</strong> to link it back to the repository you cloned from on GitHub. A remote contains the location information for the repository on GitHub. You can verify this by using the Git command to view a remote <pre>git remote -v</pre>.
@@ -80,17 +80,17 @@ git pull origin master</pre>
 <p>Once you have made changes, you will want to push these changes back to GitHub so your remote and local files are in sync.
 The <strong>push</strong> command in Git uses a remote to send the code in a branch to the linked repository on GitHub.
 
-<pre>git push origin feature-branch-name</pre>
+<pre>git push origin FEATURE-BRANCH-NAME</pre>
 </p>
 <p>The template for the push command is:
-<pre>git push &lt;REMOTE NAME&gt; &lt; BRANCH NAME&gt;
-&lt;REMOTE NAME&gt; = name of remote or defaults to origin.
-&lt;BRANCH NAME&gt; =  name of branch you want to push or defaults to the current branch..
+<pre>git push REMOTE-NAME BRANCH-NAME
+REMOTE NAME = name of remote or defaults to origin.
+BRANCH NAME =  name of branch you want to push or defaults to the current branch..
 </pre>
 Thus, the push command can be called without a remote or origin.
 
-<pre>$ git push </pre>
-But this can result in accidentally pushing the wrong branch (like master), so always add the remote and the branch.</p>
+<pre>it push </pre>
+But this can result in accidentally pushing the wrong branch (like master), so always add the remote and the branch.</p></li>
 
 
 <li><strong>Pull Requests : </strong> A pull request is a operation made on GitHub which requests to merge code from a feature branch into the master branch.  Its like a friendly way of saying: "Hey! I'm done implementing this feature your asked for, can you review my code?" After a pull request is made, it needs to be merged to update the master branch on GitHub.  When working in a team, it is best practice to have at least one other person review your pull request and they should be the person to merge it once the changes are approved.
@@ -103,9 +103,9 @@ The steps to create a pull request are:
 <li>Fill in the title and description of your pull request</li>
 <li>Choose the <strong>Create Pull Request</strong> option</li>
 <li>Wait for your pull request to be merged according to your team GitHub policy.</li>
-</ol>
+</ol></li>
 
-<p> If you are using GitHub for your own project without a team you can still create a pull request and then merge your own pull request.  <strong>You would usually NOT merge your own pull request unless you are working solo on a project.</strong> 
+<li><strong>Merge Pull Request : </strong>If you are using GitHub for your own project without a team you can still create a pull request and then merge your own pull request.  <strong>You would usually NOT merge your own pull request unless you are working solo on a project.</strong> 
 The steps to merge a pull request are: 
 <ol>
 <li>Select the <strong>Merge Pull Request</strong> option</li>
@@ -114,10 +114,10 @@ The steps to merge a pull request are:
 <li>Delete your feature branch to keep things cleaned up (optional).</li>
 </ol>
 
-</p>
+</p></li></ol>
 
 <h2>Watch it Live</h2>
-<p>Watch these commands in action. 
+<p>The video shows how all these commands work on an actual project. 
 <p><iframe style="width: 640px; height: 480px;" title="GitHub Workflow." src="https://player.vimeo.com/video/168406376/" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
 </p>
 
@@ -141,12 +141,12 @@ The steps to merge a pull request are:
 <p><strong>Part 2:</strong>  Update the <code>"summer_destinations.txt"</code> file using Git workflow  and upload your changes to your repository on GitHub. Here are the detailed steps:
   <ol>
     <li>Navigate to the folder on your computer. </li>
-    <li>Create and checkout a new feature branch <pre> git checkout &lt;FEATURE BRANCH NAME&gt;</pre></li>
+    <li>Create and checkout a new feature branch <pre> git checkout FEATURE-BRANCH-NAME</pre></li>
     <li>Add some of your favorite travel destinations to the <strong>summer_destinations.txt</strong> file.</li>
     <li>Add your files to the staged Git files and commit your changes 
       <pre>git add .
 git commit -m "your commit message" </pre></li>
-    <li>Push your feature branch to GitHub <code>$ git push origin FEATURE_BRANCH_NAME</code>.</li>
+    <li>Push your feature branch to GitHub <code>git push origin FEATURE-BRANCH-NAME</code>.</li>
     <li>Submit a pull request on GitHub from your feature branch to your master branch.</li>
     <li>Wait for your feature branch to be merged</li>
   </ol>
@@ -162,7 +162,7 @@ git commit -m "your commit message" </pre></li>
   </p>
 
   <strong>Nice work!</strong>
-</div>
+</div></p>
 
 
 <h2>Review</h2>

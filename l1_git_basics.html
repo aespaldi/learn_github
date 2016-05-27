@@ -42,7 +42,7 @@ permalink: /git_basics/
 This will create a <span class='inline-code-tt'>.git</span> folder inside your project folder to store all of your commits.  Verify that this folder exists by typing the command <pre>ls -la</pre>
 which lists all files and folders. 
 </li>
-<li><strong>Repository Status: </strong> status of a branch in a Git repository tells us if changes have been made to the state of files or folders in the project. Files and folders have three states they can be in:
+<li><strong>Repository Status: </strong> The status of a branch in a Git repository tells us if changes have been made to the state of files or folders in the project. Files and folders have three states they can be in:
 <ul>
 <li>Untracked: A new file that is not yet being tracked.</li>
 <li>Modified: A file that is tracked and has been modified since the last commit.</li>
@@ -94,7 +94,7 @@ git merge master</pre>
 When you merge, an editor window may open asking you to provide a merge message.  Do so and <strong>CLOSE</strong> the editor window to complete the merge.</p>
 </li>
 <li><strong>Merge feature branch back into master: </strong> We also want our master branch to be up to date with current changes.  We do this by checking out master and merging the feature branch back into it.  This should rarely cause a merge conflict is you have just completed the previous step.  <strong>If you are working on GitHub, you will skip  this step and replace it with pulling down the latest changes to master from GitHub.</strong>
-<pre> git checkout master
+<pre>git checkout master
 git merge feature-branch-name</pre>
 </li>
 
@@ -106,7 +106,7 @@ git merge feature-branch-name</pre>
 
 
 <h2> Watch it live</h2>
-<p>Watch these commands in action. 
+<p>The video shows how all these commands work on an actual project.  
   <p><iframe style="width: 640px; height: 480px;" title="GitHub Workflow." src="https://player.vimeo.com/video/168402870/" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
 
 
@@ -114,11 +114,11 @@ git merge feature-branch-name</pre>
 
 <h2>Your Turn</h2>
 Practice working with <strong>commits</strong> and <strong>branches</strong> by completing the following challenge. 
-<div class="challenge-heading">Challenge</div><div class="challenge-instructions">  The goal of the project is to create a text file with detailed list of features to add to Uber next month.  You are working with a two 'hypothetical' colleagues Jane and Enrico who each have different feature requests. Your job is to collect their requests and then present them to your manager. Sound like fun? Great - walk through the detailed steps below.
+<div class="challenge-heading">Challenge</div><div class="challenge-instructions">  The goal of this challenge is to create a text file with a list of features to add to Uber next month.  You are working with a two 'hypothetical' colleagues Jane and Enrico who each have different feature requests. Your job is to collect their requests and then present them to your manager. Sound like fun? Great - walk through the detailed steps below.
 <ul>
  <li> <strong>Step 1: Setup</strong>
 <ul>
-<li>Open your terminal and create a new folder called <strong>uber_2016</strong> Make sure this new folder is not inside of an existing Git repository as this does not work well.</li>
+<li>Open your terminal and create a new folder called <strong>uber_2016</strong>. Make sure this new folder is not inside of an existing Git repository as this does not work well.</li>
 <li>Create a text file called <strong>uber_feature_request.txt</strong> and add a header for Jane and Enrico's features.</li>
 <li>Initialize your folder as a Git repository and add this file to your initial commit. <pre>git init
 git add uber_feature_request.txt
