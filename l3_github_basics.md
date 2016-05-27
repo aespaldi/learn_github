@@ -126,8 +126,9 @@ The steps to merge a pull request are:
 
 <div class="challenge-heading">do the thing</div>
 <div class="challenge-instructions">
-<p>Part 1: Clone an existing repository to your computer. <ol>
-<li>Navigate to the <a href="">Travel</a> repository in a browser. 
+<p>Part 1: Clone an existing repository to your computer. 
+  <ol>
+<li>Navigate to the <a href="https://github.com/coder-sheep/travel">Travel</a> repository in a browser. 
 </li>
 <li>Fork the repository to your personal GitHub account using the <strong>Fork</strong> button.</li>
 <li>Navigate back to your personal GitHub account and explore your new repository online. You can open folders, read code, look at commit messages and more. Now that you have forked the repository, a complete copy is now in your personal GitHub account and any changes you make locally will only be pushed to this copy. </li>
