@@ -5,13 +5,18 @@ permalink: /github_basics/
 ---
 
 <p>Git allows us to have version control for our code on our local machines, but what if we want to share this code with others or work on a team. GitHub is an online tool that allows you to share and manage code as well as provide an online backup should something happen to your local computer.</p>
+
 <h2>Introduction to GitHub</h2>
 
 <p>GitHub provides an online hosting service for your code.  You store your projects on GitHub using Git repositories.  These repositories are an online copy of your local Git repository and provide online backup for your code.</p>
+<img src="{{site.baseurl}}/images/github_copy.png">
 
 <p>You can use GitHub to work with teams because multiple people can copy the GitHub repository to their own local repository (called cloning) or to their own GitHub account (called forking).</p>
 
 <p>GitHub implements version control and conversation when working with teams using the Git tools of commits, branching and merging as well as additional tools of pull requests to request a merge and issues for online conversations about the project. </p>
+
+<img src="{{site.baseurl}}/images/github_pull.png">
+
 
 <p>When working with GitHub, you will establish a GitHub workflow that incorporates your local Git workflow. The next sections describe the process of working with a common GitHub workflow.  Each step has a set of commands to perform on GitHub or run in the Command Line.
 
@@ -112,16 +117,9 @@ The steps to merge a pull request are:
 </p>
 
 <h2>Watch it Live</h2>
-
-
-<ul>
-  <li>0:00 Fork</li>
-  <li>0:57 Clone</li>
-  <li>2:18 Make Changes</li>
-  <li>3:45 Push to GitHub</li>
-  <li>4:14 Pull Request</li>
-  <li>6:24 Create a New Repository</li>
-</ul>
+<p>Watch these commands in action. 
+<p><iframe style="width: 640px; height: 480px;" title="GitHub Workflow." src="https://player.vimeo.com/video/168406376/" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
+</p>
 
 <h2>Your Turn</h2>
 <p>Let's practice all of this by working on an existing GitHub repository. 
