@@ -113,7 +113,7 @@ The steps to merge a pull request are:
 
 <h2>Watch it Live</h2>
 
-<p><iframe style="width: 640px; height: 480px;" title="GitHub Workflow." src="https://player.vimeo.com/video/156439688" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
+
 <ul>
   <li>0:00 Fork</li>
   <li>0:57 Clone</li>

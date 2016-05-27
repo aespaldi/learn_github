@@ -6,9 +6,12 @@ permalink: /git_basics/
 <p>As a web developer, you will write a lot of code. Sometimes you will want to see your previous code, or revert to a previous version. Version control is a tool that allows you to track progress, review and revert changes and create backups in your code. There are several version control tools available but one of the more common ones is called Git.</p>
 
 <h2>Understanding Git</h2>
-<p>Using Git for version control we create save points as we work on a project.  Each new feature should be saved so that at any time we can revert back to a previous save point.  In the diagram below, the features saved at point <span class='inline-code-tt'>B</span> and modified and saved again at point <span class='inline-code-tt'>C</span>.  If later in the project I want to revert back to point <span class='inline-code-tt'>B</span> I can do so easily using Git. </p>
+<p>Using Git for version control we create save points as we work on a project.  Each new feature should be saved so that at any time we can revert back to a previous save point.  In the diagram below, the features are saved at point <span class='inline-code-tt'>B</span> and modified and saved again at point <span class='inline-code-tt'>C</span>.  If later in the project I want to revert back to point <span class='inline-code-tt'>B</span> I can do so easily using Git. </p>
+<img src="{{site.baseurl}}/images/git_history.png">
 
 <p>Git also provides branches where we can work independently from the main project on a particular feature.  We can then choose to merge a branch into the main project or not.  This provides a simple way to build your project in an iterative and flexible way.  In the diagram below we have three branches from the main project <span class='inline-code-tt'>B1</span>, <span class='inline-code-tt'>B2</span>, and <span class='inline-code-tt'>B3</span>.  At save point <span class='inline-code-tt'>C</span>, branches <span class='inline-code-tt'>B1</span> and <span class='inline-code-tt'>B2</span> are merged back into the main project and branch <span class='inline-code-tt'>B3</span> is ignored.  It can be deleted or kept for possible future integration.</p>
+<img src="{{site.baseurl}}/images/git_branch.png">
+
 
 
 <h2> The Git Process </h2>
@@ -104,6 +107,8 @@ git merge feature-branch-name</pre>
 
 <h2> Watch it live</h2>
 <p>Watch these commands in action. 
+  <p><iframe style="width: 640px; height: 480px;" title="GitHub Workflow." src="https://player.vimeo.com/video/168402870/" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
+
 
 </p>
 
