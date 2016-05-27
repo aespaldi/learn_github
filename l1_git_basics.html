@@ -1,0 +1,186 @@
+---
+layout: page
+title: Git Basics
+permalink: /git_basics/
+---
+<p>As a web developer, you will write a lot of code. Sometimes you will want to see your previous code, or revert to a previous version. Version control is a tool that allows you to track progress, review and revert changes and create backups in your code. There are several version control tools available but one of the more common ones is called Git.</p>
+
+<h2>Understanding Git</h2>
+<p>Using Git for version control we create save points as we work on a project.  Each new feature should be saved so that at any time we can revert back to a previous save point.  In the diagram below, the features saved at point <span class='inline-code-tt'>B</span> and modified and saved again at point <span class='inline-code-tt'>C</span>.  If later in the project I want to revert back to point <span class='inline-code-tt'>B</span> I can do so easily using Git. </p>
+
+<p>Git also provides branches where we can work independently from the main project on a particular feature.  We can then choose to merge a branch into the main project or not.  This provides a simple way to build your project in an iterative and flexible way.  In the diagram below we have three branches from the main project <span class='inline-code-tt'>B1</span>, <span class='inline-code-tt'>B2</span>, and <span class='inline-code-tt'>B3</span>.  At save point <span class='inline-code-tt'>C</span>, branches <span class='inline-code-tt'>B1</span> and <span class='inline-code-tt'>B2</span> are merged back into the main project and branch <span class='inline-code-tt'>B3</span> is ignored.  It can be deleted or kept for possible future integration.</p>
+
+
+<h2> The Git Process </h2>
+<p>When working in Git you will be following a basic workflow to create save points and branches to protect your work.  Here is a common workflow followed by the details of how to implement each step.
+<div class="challenge-heading">git workflow</div>
+<div class="challenge-instructions">
+
+<ul>
+<li>Create or navigate to a repository</li>
+<li>Verify your master branch is updated.</li>
+<li>Create and checkout a feature branch.</li>
+<li>Make changes on the feature branch and repeatedly make save points by:
+<ul><li>editing files or folders,</li>
+<li>adding files and folders to staging</li>
+<li>committing the save point.</li>
+</ul></li>
+<li>When finished updating merge the master into the feature first and resolve any merge conflicts if necessary.</li>
+<li>Update your master branch <strong>if not working on GitHub</strong><ul><li>Checkout the master branch</li>
+<li>Merge the feature branch into the master branch so it has the latest working code</li></ul></li>
+<li>Repeat with a new feature branch for the next feature</li>
+
+</ul></div>
+<p>
+<ul>
+<li><strong>Creating A Repository: </strong> To create a Git repository, navigate into the folder containing your project in the terminal and type the command 
+<pre>git init</pre>
+
+This will create a <span class='inline-code-tt'>.git</span> folder inside your project folder to store all of your commits.  Verify that this folder exists by typing the command <pre>ls -la</pre>
+which lists all files and folders. 
+</li>
+<li><strong>Repository Status: </strong> status of a branch in a Git repository tells us if changes have been made to the state of files or folders in the project. Files and folders have three states they can be in:
+<ul>
+<li>Untracked: A new file that is not yet being tracked.</li>
+<li>Modified: A file that is tracked and has been modified since the last commit.</li>
+<li>Staged: Files that are ready to be committed.</li>
+</ul>
+
+<p>If you haven't made any changes your status will be clean.  After you make changes, the files that have been changed will be listed.
+<pre> git status</pre>
+</p>
+</li>
+<li><strong>Add Files for Staging : </strong> To make a save point, first add files for staging, either one at a time 
+<pre> git add myfile.md</pre>
+or with multiple files in the same command
+<pre> git add file-1.md file-2.md</pre>
+or all changed files
+<pre>git add .</pre>
+</li>
+<li><strong>Commit Changes: </strong> Commit all the staged files to complete the save point. When you commit a set of files and folders you are making a save point for the project. The commit message describes this save point for future reference. 
+
+<pre>git commit -m "Initial commit"</pre>
+
+A good commit message is detailed and states what was changed since the last commit. Some examples of good commit messages are:
+<ul>
+<li>"Create user profile"</li>
+<li>"Add form field for user's age"</li>
+<li>"Add cute kitten pictures to header"</li>
+</ul>
+
+</li>
+<li><strong>Creating A Branch: </strong> A branch represents an independent line of development in your project. We use branches to create a copy of the current repository and work on a small feature in this copy. Once the feature is complete we will merge it back into the original project. If the feature doesn't end up being needed you don't have to merge it back into the project. This allows the project to always be protected and in a working state while creating a new feature.
+<p>By default, all repositories have a <span class="inline-code-tt">master</span> branch. 
+
+<p>List your current branches.
+<pre> git branch</pre>
+</p>
+<p>Checkout an existing branch.
+<pre> git checkout old-branch</pre>
+</p>
+<p>Create and checkout a new branch for each new feature. Branch names should be lower case and one word (or hyphenated). They generally represent the feature you are creating (like add-forms)
+<pre> git checkout -b add-forms</pre>
+</p>
+</li>
+
+<li><strong>Merge master branch into feature: </strong> When you have finished with a feature, you want to integrate all the existing code into it. Verify you are on the feature branch and all files have been committed there before you merge.  Merging may cause a merge conflict if master has changed since you started your feature. If so you need to resolve it before finishing the merge.
+<pre>git status
+git merge master</pre>
+
+<p>
+When you merge, an editor window may open asking you to provide a merge message.  Do so and <strong>CLOSE</strong> the editor window to complete the merge.</p>
+</li>
+<li><strong>Merge feature branch back into master: </strong> We also want our master branch to be up to date with current changes.  We do this by checking out master and merging the feature branch back into it.  This should rarely cause a merge conflict is you have just completed the previous step.  <strong>If you are working on GitHub, you will skip  this step and replace it with pulling down the latest changes to master from GitHub.</strong>
+<pre> git checkout master
+git merge feature-branch-name</pre>
+</li>
+
+<li><strong>Merge Conflicts : </strong> Sometimes there is a conflict and the code in the two branches cannot be merged because the two branches both changed the same part of the file. In this case, Git can't figure out which change to keep so it creates a <strong>merge conflict</strong>. To fix a merge conflict, you will need to manually edit the file with the conflict and then re-add it to the staged files and commit the changes again.
+</li>
+
+<li><strong>Using Git Commands : </strong> These are the more common Git commands you will use in a standard workflow. You can also 
+ see a list of all Git commands in your terminal with the command <pre>git help</pre> or learn more about a particular command <pre>git help COMMAND-NAME</pre></li></ul>
+
+
+<h2> Watch it live</h2>
+<p>Watch these commands in action. 
+
+</p>
+
+<h2>Your Turn</h2>
+Practice working with <strong>commits</strong> and <strong>branches</strong> by completing the following challenge. 
+<div class="challenge-heading">Challenge</div><div class="challenge-instructions">  The goal of the project is to create a text file with detailed list of features to add to Uber next month.  You are working with a two 'hypothetical' colleagues Jane and Enrico who each have different feature requests. Your job is to collect their requests and then present them to your manager. Sound like fun? Great - walk through the detailed steps below.
+<ul>
+ <li> <strong>Step 1: Setup</strong>
+<ul>
+<li>Open your terminal and create a new folder called <strong>uber_2016</strong> Make sure this new folder is not inside of an existing Git repository as this does not work well.</li>
+<li>Create a text file called <strong>uber_feature_request.txt</strong> and add a header for Jane and Enrico's features.</li>
+<li>Initialize your folder as a Git repository and add this file to your initial commit. <pre>git init
+git add uber_feature_request.txt
+git commit -m "initial commit"</pre>
+Verify that you have committed the file by typing <pre>git status</pre>You should get a "directory clean" message.
+</ul>
+</li>
+<li><strong>Step 2: Gather Features</strong>
+<ul><li>Create a branch for Jane's features <pre>git checkout -b jane-features</pre></li>
+<li>Open the <strong>uber_feature_request.txt</strong> file and add in 5 features for Jane.</li>
+<li>Add and commit these changes. <pre>git add .
+git commit -m "Add features from Jane"</pre></li>
+<li>Checkout the master branch and then create a new branch for Enrico's features.  <pre>git checkout master
+git checkout -b enrico-features</pre>  </li>
+<li>Open the <strong>uber_feature_request.txt</strong> file.  You should not see any of Jane's features in this file since you created the branch from master.  Add Enrico's features.</li>
+<li>Add and commit these changes.</li>
+</ul></li>
+<li><strong>Step 3: Merge Features</strong><li>
+<ul>
+  <li>Checkout the master branch and merge Jane's features. <pre>
+git checkout master
+git merge jane-feature</pre></li>
+<li>Verify the merge is committed and the status is 'clean' <pre>git status</pre></li>
+<li>Merge Enrico's features into the <span class='inline-code-tt'>master</span> branch. </li>
+<li>Depending on how you setup the text in your file, you may get a merge conflict.  If so open the <strong>uber_feature_request.txt</strong> file, remove the merge indicator lines and choose the content you want to keep.
+  <br>
+<pre style="width:40%; float:left; margin:5px">
+Features:
+<<<<<<< HEAD
+pink cars
+snacks for riders
+ice cream delivery
+=======
+cookie delivery
+snacks for drivers
+no surge charging
+>>>>>>> enrico-features </pre>
+
+After editing : 
+<pre style="width:40%;">
+Features:
+pink cars
+snacks for riders
+ice cream delivery
+cookie delivery
+snacks for drivers
+no surge charging
+</pre>
+<br style="clear: both">
+</li>
+<li>Add and commit your changes and verify that the status of the master branch is 'clean'</li>
+</ul></li></ul>
+
+<p>Your master branch should now have a single file with all of the feature requests from Enrico and Jane. Nice work.  You have successfully used Git to create save points, build on feature branches and merge branches back together.  </p>
+</div>
+
+
+
+
+
+<h2>Review</h2>
+<p>In this challenge you learned the basics of working with Git.  You should be comfortable with the following concepts and how to implement them in code: <ul>
+<li>Create a Git repository</li>
+<li>Add files to staging in a Git repository</li>
+<li>Commit files to the Git repository creating a save point that can be accessed later</li>
+<li>Create a feature branch to work independent from the main project</li>
+<li>Merge branches together</li>
+</ul></p>
+<p>This is only the beginning of what you can do with Git.  Once you have mastered these basics we recommend you explore more on the <a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics">Git Tutorial </a> or the <a href="https://www.atlassian.com/git/tutorials">Becoming a git guru</a> tutorial by Atlassian.</p>
+
